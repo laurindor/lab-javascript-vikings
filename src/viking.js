@@ -7,15 +7,16 @@ class Soldier {
     this.health = health;
     this.strength = strength;
   }
-  attack() {
-    return this.strength
-  };
+}
 
-  receiveDamage(theDamage) {
+   attack() {
+     return this.strength
+   }; 
 
    
-  }
-};
+   receiveDamage(){
+     this.health -= damage 
+   }
 
 
 
@@ -23,16 +24,37 @@ class Soldier {
 
 // Viking
 class Viking extends Soldier {
-
-  constructor(name, health, strength) {
-    super(health, strength);
-    this.name = "name";
-  } //i think it's ok but it doesnt' work 
+  constructor(name,health,strength) {
+    super (health, strength);
+    this.name = name; 
+  }
 }
+  attack() {
+    return this.strength
+  };
+
+  receiveDamage() { 
+    
+    this.health -= damage 
+    if (this.health > 0){
+      return ('${this.name} has received ${damage} points of damage'); 
+    }
+    else {
+      return ('${this.name} has died in act of combat');
+    }
+  };
+    
+  battleCry() {
+    return ('Odin Ows You All!');
+  };
+   
+
+
 
 /*A Viking is a Soldier with an additional property, their name. They also have a different receiveDamage() method and new method, battleCry().
 
-Modify the Viking class, have it inherit from Soldier, re-implement the receiveDamage() method for Viking, and add a new battleCry() method
+Modify the Viking class, have it inherit from Soldier, 
+re-implement the receiveDamage() method for Viking, and add a new battleCry() method
 
 
 // Saxon
